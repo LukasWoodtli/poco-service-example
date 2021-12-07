@@ -5,7 +5,7 @@
 #include <iostream>
 
 
-const constexpr auto connectionString = "/home/wolu/lab/poco-service-example/data.sqlite";
+const constexpr auto connectionString = "data.sqlite";
 
 int main() {
     
