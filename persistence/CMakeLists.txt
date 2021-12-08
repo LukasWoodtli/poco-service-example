@@ -25,7 +25,7 @@ set_source_files_properties(${ACTIVE_RECORD_CLASSES_LIST}
 
 
 add_custom_command(OUTPUT ${ACTIVE_RECORD_CLASSES_LIST}
-                  COMMAND arc ${ORM_DEF_FILE}
+                  COMMAND /usr/local/bin/arc ${ORM_DEF_FILE}
                   WORKING_DIRECTORY ${GENERATED_FILES_DIR}
                   DEPENDS ${ORM_DEF_FILE}
                   COMMENT "Generating active records")
@@ -36,4 +36,4 @@ add_library(persistence SHARED)
 set_target_properties(persistence PROPERTIES LINKER_LANGUAGE CXX)
 target_sources(persistence PRIVATE ${ACTIVE_RECORD_CLASSES_LIST})
 target_include_directories(persistence PUBLIC "${GENERATED_FILES_DIR}/include")
-target_link_libraries(persistence PUBLIC PocoActiveRecord PocoData PocoFoundation)
+target_link_libraries(persistence PUBLIC Poco::ActiveRecord Poco::Data Poco::Foundation)

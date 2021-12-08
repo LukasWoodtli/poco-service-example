@@ -7,8 +7,11 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_MACOSX_RPATH OFF)
 
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+##include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+##conan_basic_setup()
+
+set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /usr/local/Cellar/poco/1.11.1/lib/cmake/Poco)
+find_package(Poco REQUIRED ActiveRecord Data Foundation)
 
 
 set(TARGET poco_service_example)
